@@ -49,15 +49,33 @@
 
 
 .folderIcon {
-    /* filter: invert(100%) sepia(1%) saturate(342%) hue-rotate(68deg) brightness(113%) contrast(100%); */
     margin-left: 10px;
     height: 32px;
     width: 32px;
 }
 
+.folderIcon.invert {
+    filter: invert(100%) sepia(1%) saturate(342%) hue-rotate(68deg) brightness(113%) contrast(100%);
+}
 
+.folderIcon.mini {
+    height: 16px;
+    width: 16px;
+}
 
 .folded > .card-body{
     display: none !important;
  }
 
+.addBtns {
+    display: flex;
+    justify-content: stretch;
+    gap: 5px;
+}
+.addBtns > *, #create {
+    width: 100% !important;
+}
+
+.btn-info {
+    background-color: #1b57d8;
+}
