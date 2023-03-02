@@ -30,6 +30,12 @@
     
 }
 
+/* Anti-missclick */
+.folderHeader {
+    pointer-events: fill;
+}
+
+
 .folderName {
     font-size: large;
 }
@@ -65,7 +71,7 @@
 
 .folded > .card-body{
     display: none !important;
- }
+}
 
 .addBtns {
     display: flex;
@@ -78,4 +84,21 @@
 
 .btn-info {
     background-color: #1b57d8;
+}
+
+
+.invisible-input {
+    background-color: transparent;
+    border: 0px;
+    font-weight: bold;
+}
+
+.invisible-input:focus {
+    outline: 0;
+    background-color: rgba(122, 122, 122, 0.267);
+    border-radius: 5px
+}
+
+.foldEvent {
+    cursor: pointer
 }

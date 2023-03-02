@@ -1,9 +1,12 @@
 const foldedIcon = `<svg class="folderIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M64 480H448c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64H288c-10.1 0-19.6-4.7-25.6-12.8L243.2 57.6C231.1 41.5 212.1 32 192 32H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64z"/></svg>`
 const unfoldedIcon = '<svg class="folderIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M88.7 223.8L0 375.8V96C0 60.7 28.7 32 64 32H181.5c17 0 33.3 6.7 45.3 18.7l26.5 26.5c12 12 28.3 18.7 45.3 18.7H416c35.3 0 64 28.7 64 64v32H144c-22.8 0-43.8 12.1-55.3 31.8zm27.6 16.1C122.1 230 132.6 224 144 224H544c11.5 0 22 6.1 27.7 16.1s5.7 22.2-.1 32.1l-112 192C453.9 474 443.4 480 432 480H32c-11.5 0-22-6.1-27.7-16.1s-5.7-22.2 .1-32.1l112-192z"/></svg>'
 const deleteBtn = `<button which="" class="btn info-danger info-hover float-right" id="deleteFolder"><i class="fa fa-trash"></i></button>`
+const icon = {Folded: foldedIcon, Unfolded: unfoldedIcon}
 const path = window.location.pathname.split('/') 
 const guildID = path[2]
+const defaultName = "folder"
 let folderCount = 0
+
 
 registerBtn()
 
@@ -16,12 +19,11 @@ function registerBtn() {
     
     const container = templateBtn.parentElement
     container.classList = "addBtns"
-    const a = document.createElement('a')
     const btn = document.createElement('button')
     btn.classList = 'btn info-info'
     btn.id = 'addFolder'
     btn.setAttribute('type', 'button')
-    btn.innerHTML = `${foldedIcon.replace('folderIcon', 'folderIcon invert mini')} Folder`
+    btn.innerHTML = `${foldedIcon.replace('folderIcon', 'folderIcon invert mini')} New folder`
     container.appendChild(btn)
 }
 
@@ -29,33 +31,43 @@ function registerBtn() {
 const addFolderBtn = document.getElementById('addFolder')
 addFolderBtn.addEventListener('click', newFolder)
 function newFolder() {
-    const folders = new String(localStorage[guildID]).split('|')
+    const folders = foldersList('content')
     if(folders[0]=="undefined"){ folders.shift() }
     folders.push([])
     localStorage[guildID] = folders.join('|')
-    console.log(localStorage[guildID])
+    const names = foldersList('name')
+    if(names[0]=="undefined"){ names.shift() }
+    names.push(defaultName)
+    localStorage[`${guildID}-names`] = names.join('|')
     window.location.reload()
 }
 
 
+let state = "unfolded"
+getConfig().then(config => {
+    state = config.defaultState
+    if (!state) { state = ''}
+    loadFolders()
+})
 
-// removeFolder(0)
-loadFolders()
+
 function loadFolders() {
-    const folderList = new String(localStorage[guildID]).split('|')
+    const folderList = foldersList('content')
+    const namesList = foldersList('name')
     if(folderList.join('|')=="undefined"){return}
     let commands;
-    folderList.forEach(folder => {
+    folderList.forEach((folder, index) => {
         const tokens = folder.split(' ')
         commands = tokens.map(token => findCmd(token))
-        appendFolder(commands)
+        appendFolder(commands, namesList[index])
     })
 }
 
 // add single folder and move functions in
 
-function appendFolder(commands) {
+function appendFolder(commands, name) {
     const commandsBox = document.getElementById('accordion')
+    
     // const commands = commandsBox.querySelectorAll('.card') // change to add different commands
     const commandsCode = [];
     commands.forEach(element => {
@@ -65,11 +77,11 @@ function appendFolder(commands) {
         }
     })
     const folder = document.createElement('div')
-    folder.classList = "folder card"
+    folder.classList = `folder card ${state.toLowerCase()}`
     folder.innerHTML = `<div class="card-header"><div class="folderHeader">
     <div>
-    ${unfoldedIcon}
-    <div class="folderName"><b>Test</b></div>
+    <div class="foldEvent">${icon[state]}</div>
+    <div class="folderName"><input type="text" value="${name}" id="folderName" which="${folderCount}" class="invisible-input"></div>
     </div>
     <div>
     ${deleteBtn.replace(`which=""`, `which="${folderCount}"`)}
@@ -81,29 +93,56 @@ function appendFolder(commands) {
     </div>`
     folder.querySelector('.folderContainer').innerHTML = commandsCode.join('')
     commandsBox.appendChild(folder)
-    folder.querySelector('.folderHeader').addEventListener('click', () => {closeFolder.call(folder)})
+    folder.querySelector('.foldEvent').addEventListener('click', () => {closeFolder.call(folder)})
     folderCount++
-    registerDeleteBtns()
+    registerFolderBtns()
 }
 
+// Removes a folder from registry, needs reload to take effect
 function removeFolder(num) {
     let data = new String(localStorage[guildID])
+    let names = foldersList('name')
     let folders = data.split('|')
     folders[num] = undefined
+    names[num] = undefined
     folders = folders.filter(val => val != undefined)
-    if(folders.length==0){ localStorage[guildID] = "undefined" } else {
+    names = names.filter(val => val != undefined)
+    console.log(folders, names)
+    if(folders.length==0){ 
+        localStorage[guildID] = "undefined"; 
+        localStorage[`${guildID}-names`] = "undefined" 
+    } else {
         localStorage[guildID] = folders.join('|')
+        localStorage[`${guildID}-names`] = names.join('|')
     }
+    
+
     
     // console.log(data, folders)
 }
-function registerDeleteBtns() {
-    const btns = document.querySelectorAll('#deleteFolder')
-    btns.forEach(btn => {
+
+// Registers events for all folder delete btns
+function registerFolderBtns() {
+    const delBtns = document.querySelectorAll('#deleteFolder')
+    delBtns.forEach(btn => {
         btn.addEventListener('click', deleteBtnHand)
+    })
+
+    const inputs = document.querySelectorAll('#folderName')
+    inputs.forEach(input => {
+        input.addEventListener('input', saveName)
     })
 }
 
+function saveName() {
+    const names = foldersList('name')
+    const index = this.getAttribute('which')
+    const name = this.value
+    names[index] = name
+    localStorage[`${guildID}-names`] = names.join('|')
+}
+
+// Handler of folder delete button
 function deleteBtnHand() {
     console.log('delete')
     removeFolder(this.getAttribute('which'))
@@ -154,8 +193,18 @@ function findCmd(token) {
     }
     return res
 }
+function foldersList(property) {
+    switch(property){
+        case 'content':
+            return new String(localStorage[guildID]).split('|')
+        case 'name':
+            return new String(localStorage[`${guildID}-names`]).split('|')
+    }
+}
 
-
+function getConfig() {
+    return chrome.storage.sync.get()
+}
 
 // Initiating the databas [DEPRECATED]
 // function initFolders() {

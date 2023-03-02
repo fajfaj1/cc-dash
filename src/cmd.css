@@ -1,0 +1,38 @@
+.select-light {
+    font-weight: normal !important;
+}
+
+#folderSelector {
+    display: flex;
+    gap: 5px;
+    flex-wrap: nowrap;
+    
+}
+
+.folderIcon {
+    margin-right: 5px;
+    height: 25px;
+    width: 25px;
+}
+.grey {
+    filter: invert(89%) sepia(9%) saturate(170%) hue-rotate(169deg) brightness(98%) contrast(84%);
+}
+
+#folderMenu {
+    background-color: transparent;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    outline: 0 !important;
+    transition: border 0.2s;
+}
+
+#folderMenu:focus {
+    outline: 0 !important;
+    
+    border-color: #398fe6;
+}
+
+
+.card-tools.form-inline {
+    gap: 5px;
+}
