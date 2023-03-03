@@ -37,6 +37,9 @@ Go to the command edit page to change the folder which it belongs to.
 # Support
 If you struggle with making the extension work, or want to suggest a new feature, feel free to reach out to `fajfaj#6941` in the [CC support server](https:/ccbot.me/join).
 
+# Related Project
+In case this extension comes in handy to you, make sure to check out my [Documentation folders extension](https://github.com/fajfaj1/documentation-folders)
+
 # Custom command
 [Custom Command](https://ccbot.me/) is a separate project which I am not a creator of. 
 All of the credits for cc belong to it's actual owner.
