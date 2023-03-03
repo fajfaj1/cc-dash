@@ -35,7 +35,7 @@ Go to the command edit page to change the folder which it belongs to.
 2. Download the extension
 
 # Support
-If you struggle with making the extension work, feel free to reach out to `fajfaj#6941` in the [CC support server](https:/ccbot.me/join).
+If you struggle with making the extension work, or want to suggest a new feature, feel free to reach out to `fajfaj#6941` in the [CC support server](https:/ccbot.me/join).
 
 # Custom command
 [Custom Command](https://ccbot.me/) is a separate project which I am not a creator of. 
