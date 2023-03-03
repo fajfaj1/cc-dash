@@ -5,6 +5,7 @@ const icon = {Folded: foldedIcon, Unfolded: unfoldedIcon}
 const path = window.location.pathname.split('/') 
 const guildID = path[2]
 const defaultName = "folder"
+const defaultDefaultState = "Folded"
 let folderCount = 0
 
 
@@ -46,7 +47,7 @@ function newFolder() {
 let state = "unfolded"
 getConfig().then(config => {
     state = config.defaultState
-    if (!state) { state = ''}
+    if (!state) { state = defaultDefaultState}
     loadFolders()
 })
 
@@ -77,6 +78,7 @@ function appendFolder(commands, name) {
         }
     })
     const folder = document.createElement('div')
+    console.log(state, icon[state])
     folder.classList = `folder card ${state.toLowerCase()}`
     folder.innerHTML = `<div class="card-header"><div class="folderHeader">
     <div>
