@@ -10,8 +10,10 @@ Everytime you click it, an empty folder will be created.
 + You can rename it by clicking it's name.
 > ![Folder rename.png](guide/folderRename.png)
 
-+ Every command revieved a menu for folder selection.
-Click `edit` button to change it's folder.
++ Folders can be opened and closed by clicking the folder image
+
++ Every command received a menu for folder selection.
+Go to the command edit page to change the folder which it belongs to.
 > ![Add command to folder](guide/folderMenu.png)
 
 + You can define whether folders should be folder or unfolded on page load within a popup.
@@ -32,6 +34,8 @@ Click `edit` button to change it's folder.
 1. Go to the firefox addons store [extension's page](https://addons.mozilla.org/en-US/firefox/addon/cc-dashboard-folders/)
 2. Download the extension
 
+# Support
+If you struggle with making the extension work, feel free to reach out to `fajfaj#6941` in the [CC support server](https:/ccbot.me/join).
 
 # Custom command
 [Custom Command](https://ccbot.me/) is a separate project which I am not a creator of. 
