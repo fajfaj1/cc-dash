@@ -1,7 +1,7 @@
 {
     "name": "CC dashboard folders",
     "description": "A browser extensions allowing you to fold extensions in cc dashboard",
-    "version": "0",
+    "version": "1.0",
     
     "icons": {
         "600": "icon.png",
