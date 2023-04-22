@@ -18,8 +18,8 @@
     "content_scripts": [
         {
           "matches": ["https://ccommandbot.com/cc/*"],
-          "js": ["./JS/list.js"],
-          "css": ["./CSS/list.css"],
+          "js": ["./JS/list.js", "./JS/search.js"],
+          "css": ["./CSS/list.css", "./CSS/search.css"],
           "run_at": "document_end"
         },
         {

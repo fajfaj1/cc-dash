@@ -52,10 +52,10 @@ button {
     background-color: var(--brand);
     color: var(--foreground-light);
     font-size: large;
-    outline: 2px solid var(--brand);
+    /* outline: 2px solid var(--brand); */
     border: none;
-    padding: 5px;
-    border-radius: 5px;
+    padding: 5px 8px;
+    border-radius: 10px;
 }
 button:hover {
     background-color: var(--brand-darker);
@@ -98,3 +98,9 @@ span.extName {
     cursor: pointer;
 }
 
+.line {
+    display: flex;
+    align-items: flex-start;
+    width: fit-content;
+    margin-left: -3px;
+}
