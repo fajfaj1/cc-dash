@@ -19,7 +19,7 @@
         {
           "matches": ["https://ccommandbot.com/cc/*"],
           "js": ["./JS/list.js", "./JS/search.js"],
-          "css": ["./CSS/list.css"],
+          "css": ["./CSS/list.css", "./CSS/search.css"],
           "run_at": "document_end"
         },
         {

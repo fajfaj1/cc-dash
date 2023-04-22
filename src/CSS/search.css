@@ -1,0 +1,44 @@
+.card[show=false] {
+    margin-bottom: 0;
+}
+
+.card-header[show=false] {
+    display: none !important;
+}
+
+.card-tools {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.searchbox-wrapper {
+    margin: 0;
+    padding: 2px 5px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    border: 2px solid #575555;
+}
+.searchbox-wrapper:hover, .searchbox-wrapper:focus-visible  {
+    background-color: #e2e6ea;
+}
+
+.searchIcon {
+    border: 0;
+    background-color: inherit;
+    outline: 0 !important;
+}
+
+#searchbox {
+    border: none;
+    outline: none;
+    background-color: inherit;
+}
+
+#searchbox::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
