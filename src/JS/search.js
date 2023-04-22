@@ -4,7 +4,7 @@ function getConfig() {
 }
 getConfig().then(config => {
     // This motherfukcer did not work without a timeout
-    if(config.disableSearch != false) {
+    if(config.disableSearch != true) {
         setTimeout(initiate, '1')
     }
     
