@@ -78,7 +78,7 @@ function appendFolder(commands, name) {
         }
     })
     const folder = document.createElement('div')
-    console.log(state, icon[state])
+    // console.log(state, icon[state])
     folder.classList = `folder card ${state.toLowerCase()}`
     folder.innerHTML = `<div class="card-header"><div class="folderHeader">
     <div>
@@ -109,7 +109,7 @@ function removeFolder(num) {
     names[num] = undefined
     folders = folders.filter(val => val != undefined)
     names = names.filter(val => val != undefined)
-    console.log(folders, names)
+    // console.log(folders, names)
     if(folders.length==0){ 
         localStorage[guildID] = "undefined"; 
         localStorage[`${guildID}-names`] = "undefined" 
@@ -146,7 +146,7 @@ function saveName() {
 
 // Handler of folder delete button
 function deleteBtnHand() {
-    console.log('delete')
+    // console.log('delete')
     removeFolder(this.getAttribute('which'))
     window.location.reload()
 }
