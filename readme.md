@@ -1,6 +1,11 @@
 # CC folders
-An extensions allowing you to organize your [Custom Command](https://ccbot.me/) commands with folders.
+A browser extension extending capabilities of [Custom Command](https://ccbot.me/) dashboard.
+
+# Features
+* Folders - group your commands in folders
 > ![Overview](guide/overview.png)
+* Command search - find your commands easily with a search box
+> ![Search box](guide/searchbox.png)
 
 # Usage
 + Once you log in to the dashboard, you will notice a `New folder` button.
@@ -16,10 +21,10 @@ Everytime you click it, an empty folder will be created.
 Go to the command edit page to change the folder which it belongs to.
 > ![Add command to folder](guide/folderMenu.png)
 
-+ You can define whether folders should be folder or unfolded on page load within a popup.
++ You can use the popup to define a default state of the folders.
 > ![Popup](guide/popup.png)
 
-+ All your settings are stored in your browsers, and won't be reset on leave.
++ All your settings are stored in the browser, and won't be reset on leave.
 
 # Installation
 ## Chrome
