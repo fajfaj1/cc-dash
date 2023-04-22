@@ -78,7 +78,7 @@ function appendFolder(commands, name) {
         }
     })
     const folder = document.createElement('div')
-    console.log(state, icon[state])
+    // console.log(state, icon[state])
     folder.classList = `folder card ${state.toLowerCase()}`
     folder.innerHTML = `<div class="card-header"><div class="folderHeader">
     <div>
