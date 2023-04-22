@@ -13,7 +13,9 @@ saveBtn.addEventListener('click', save)
 
 function save() {
     const defaultState = document.getElementById('state').value
-    chrome.storage.sync.set({defaultState: defaultState})
+    const searchDisable = document.getElementById('search-box').checked
+    
+    chrome.storage.sync.set({defaultState: defaultState, disableSearch: searchDisable})
     saveComplete()
     getConfig()
         .then(config => {console.log(config)})
@@ -23,3 +25,19 @@ function save() {
 function getConfig() {
     return chrome.storage.sync.get()
 }
+
+getConfig().then((config) => {
+    document.getElementById('state').value = config.defaultState
+    const searchbox = document.getElementById('search-box')
+    switch(config.disableSearch) {
+        case true:
+            searchbox.setAttribute('checked', 'indeed')
+            console.log('yep')
+            break;
+        case false:
+            searchbox.removeAttribute('checked')
+            console.log('nope')
+            break;
+    }
+    
+})
