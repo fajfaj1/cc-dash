@@ -38,6 +38,8 @@ Go to the command edit page to change the folder which it belongs to.
 ## Firefox
 1. Go to the firefox addons store [extension's page](https://addons.mozilla.org/en-US/firefox/addon/cc-dashboard-folders/)
 2. Download the extension
+3. Right-click the icon
+4. Select `Always Allow on ccommandbot.com`
 
 # Support
 If you struggle with making the extension work, or want to suggest a new feature, feel free to reach out to `fajfaj#6941` in the [CC support server](https:/ccbot.me/join).
