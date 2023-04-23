@@ -2,29 +2,19 @@
 A browser extension extending capabilities of [Custom Command](https://ccbot.me/) dashboard.
 
 # Features
-* Folders - group your commands in folders
-> ![Overview](guide/overview.png)
-* Command search - find your commands easily with a search box
-> ![Search box](guide/searchbox.png)
+### Folders
+Organize your commands with folders
+> ![Folders](guide/overview.png)
 
-# Usage
-+ Once you log in to the dashboard, you will notice a `New folder` button.
-Everytime you click it, an empty folder will be created.
-> ![New folder](guide/newFolder.png)
-
-+ You can rename it by clicking it's name.
-> ![Folder rename.png](guide/folderRename.png)
-
-+ Folders can be opened and closed by clicking the folder image
-
-+ Every command received a menu for folder selection.
-Go to the command edit page to change the folder which it belongs to.
-> ![Add command to folder](guide/folderMenu.png)
-
-+ You can use the popup to define a default state of the folders.
+### Command search
+Find your commands easily with a search bar
+> ![Search bar](guide/searchbox.png)
+> 
+### Configuration
+The extension can be configured within a popup
 > ![Popup](guide/popup.png)
-
-+ All your settings are stored in the browser, and won't be reset on leave.
+<!-- > ![Overview](guide/overview.png)
+> ![Search box](guide/searchbox.png) -->
 
 # Installation
 ## Chrome
@@ -40,6 +30,16 @@ Go to the command edit page to change the folder which it belongs to.
 2. Download the extension
 3. Right-click the icon
 4. Select `Always Allow on ccommandbot.com`
+
+# Usage
++ Once you log in to the dashboard, you will notice a blue `New folder` button.
+Everytime you click it, an empty folder will be created.
++ You can rename it by clicking it's name.
++ Folders can be opened and closed by clicking the folder image.
++ Every command received a menu for folder selection.
+Go to the command edit page to change the folder which it belongs to.
++ You can use the popup to configure the extension.
++ All your settings are stored in the browser, and won't be reset on leave.
 
 # Support
 If you struggle with making the extension work, or want to suggest a new feature, feel free to reach out to `fajfaj#6941` in the [CC support server](https:/ccbot.me/join).
