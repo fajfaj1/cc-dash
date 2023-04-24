@@ -19,24 +19,26 @@
     display: flex;
     align-items: center;
     gap: 3px;
-    background-color: #f8f9fa;
+    background-color: rgba(0, 0, 0, 0.03);
     border-radius: 10px;
-    border: 2px solid #575555;
+    border: 2px solid var(--gray-dark);
 }
 .searchbox-wrapper:hover, .searchbox-wrapper:focus-visible  {
-    background-color: #e2e6ea;
+    /* background-color: #e2e6ea; */
 }
 
 .searchIcon {
     border: 0;
-    background-color: inherit;
+    background-color: transparent;
+    color: var(--gray-dark);
     outline: 0 !important;
 }
 
 #searchbox {
     border: none;
     outline: none;
-    background-color: inherit;
+    background-color: transparent;
+    color: inherit;
 }
 
 #searchbox::-webkit-search-cancel-button {

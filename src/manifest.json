@@ -1,7 +1,7 @@
 {
     "name": "CC dashboard",
     "description": "A browser extension expanding capabilities of the Custom Command dashboard",
-    "version": "1.4",
+    "version": "1.5",
     
     "icons": {
         "600": "./IMG/icon.png",
