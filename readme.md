@@ -1,4 +1,4 @@
-# CC folders
+# CC dashboard
 A browser extension extending capabilities of [Custom Command](https://ccbot.me/) dashboard.
 
 # Features
@@ -18,18 +18,16 @@ The extension can be configured within a popup
 
 # Installation
 ## Chrome
-1. Download the zip file from [cc-dash.zip](cc-dash.zip?raw=1)
-2. Open extensions tab in your browser
-3. Enable developer mode (top right corner)
-4. Drag in the zip file
-
-**Note:** Don't worry if the `errors` tab appears, it will be displayed because you are in the developer mode.
+You can get the extension from the [Chrome Web Store](https://chrome.google.com/webstore/detail/cc-dashboard/hmnaglfdcpobmkcibengchkginoahjpo)
 
 ## Firefox
-1. Go to the firefox addons store [extension's page](https://addons.mozilla.org/en-US/firefox/addon/cc-dashboard-folders/)
-2. Download the extension
-3. Right-click the icon
-4. Select `Always Allow on ccommandbot.com`
+The extension can be installed from the [Add-ons page](https://addons.mozilla.org/en-US/firefox/addon/cc-dashboard-folders/)
+
+> ### Important!
+> Make sure to let the extension work in `ccommandbot.com`.
+> 
+> You can do that in the **permissions** tab, or by right-clicking the icon.
+
 
 # Usage
 + Once you log in to the dashboard, you will notice a blue `New folder` button.
