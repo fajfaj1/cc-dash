@@ -49,6 +49,9 @@ function saveFolder() {
     localStorage[guildID] = folders.join('|')
 }
 
+function themeSync() {
+    
+}
 
 function foldersList(property) {
     let value = []

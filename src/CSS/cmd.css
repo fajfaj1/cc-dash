@@ -25,6 +25,9 @@
     outline: 0 !important;
     transition: border 0.2s;
 }
+html[data-darkreader-scheme="dark"] #folderMenu {
+    background-color: #0e0e0e;
+}
 
 #folderMenu:focus {
     outline: 0 !important;
