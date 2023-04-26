@@ -115,9 +115,5 @@ function initiate() {
 
     const searchForm = searchbox.querySelector('input')
     searchForm.addEventListener('input', search)
-
-
-    
-    console.log(commandsJSON)
 }
 

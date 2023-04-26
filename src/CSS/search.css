@@ -23,9 +23,6 @@
     border-radius: 10px;
     border: 2px solid var(--gray-dark);
 }
-.searchbox-wrapper:hover, .searchbox-wrapper:focus-visible  {
-    /* background-color: #e2e6ea; */
-}
 
 .searchIcon {
     border: 0;
