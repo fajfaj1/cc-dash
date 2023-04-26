@@ -51,10 +51,19 @@ function saveFolder() {
 
 
 function foldersList(property) {
+    let value = []
     switch(property){
         case 'content':
-            return new String(localStorage[guildID]).split('|')
+            value = new String(localStorage[guildID]).split('|')
+            break
         case 'name':
-            return new String(localStorage[`${guildID}-names`]).split('|')
+            value = new String(localStorage[`${guildID}-names`]).split('|')
+            break;
+            
     }
+
+    if(value.join('')=='undefined') {
+        return []
+    }
+    return value
 }
