@@ -73,18 +73,18 @@
     display: none !important;
 }
 
-.addBtns {
+/* .addBtns {
     display: flex;
     justify-content: stretch;
     gap: 5px;
-}
-.addBtns > *, #create {
+} */
+/* .addBtns > *, #create {
     width: 100% !important;
-}
+} */
 
-.btn-info {
+/* .btn-info {
     background-color: #1b57d8;
-}
+} */
 
 
 .invisible-input {
