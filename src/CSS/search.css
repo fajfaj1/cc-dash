@@ -1,9 +1,6 @@
 .card[show=false] {
     margin-bottom: 0;
-}
-
-.card-header[show=false] {
-    display: none !important;
+    display: none;
 }
 
 .card-tools {
